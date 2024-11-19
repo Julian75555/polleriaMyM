@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Bienvenidos a MyM Pollería</title>
+    <link rel="stylesheet" href="inicio.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="#home">Inicio</a></li>
+                <li><a href="#about">Sobre Nosotros</a></li>
+                <li><a href="#contact">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="container">
+        <div class="logo">
+            <img src="Polleria MYM.png" alt="Logo MyM Pollería">
+        </div>
+
+        <h1>Bienvenidos a MyM Pollería</h1>
+        <p>¡Los mejores productos de pollo fresco y congelado!</p>
+
+        <section id="about" class="section">
+            <h2>Sobre Nosotros</h2>
+            <p>En MyM Pollería, nos especializamos en ofrecer productos de pollo de la más alta calidad. Desde pollos frescos hasta cortes seleccionados, garantizamos frescura y sabor en cada compra. Nuestro compromiso es con tu salud y satisfacción.</p>
+        </section>
+
+        <div class="carousel">
+            <img src="pollo.jpg" alt="Pollo Entero" class="active">
+            <img src="pechuga.jpg" alt="Pechugas de Pollo">
+            <img src="alitas.jpg" alt="Alitas de Pollo">
+            <img src="muslos.jpg" alt="Muslos de Pollo">
+            <a class="prev" onclick="changeSlide(-1)">&#10094;</a>
+            <a class="next" onclick="changeSlide(1)">&#10095;</a>
+        </div>
+
+        <a href="polleria.html" class="btn">Entrar a la Tienda</a>
+    </div>
+
+    <footer>
+  
+    </footer>
+
+    <script>
+        let slideIndex = 0;
+        const slides = document.querySelectorAll(".carousel img");
+
+        function changeSlide(n) {
+            slideIndex += n;
+            if (slideIndex >= slides.length) slideIndex = 0;
+            if (slideIndex < 0) slideIndex = slides.length - 1;
+            showSlides();
+        }
+
+        function showSlides() {
+            slides.forEach((slide, index) => {
+                slide.classList.remove('active');
+                if (index === slideIndex) {
+                    slide.classList.add('active');
+                }
+            });
+        }
+    </script>
+</body>
+</html>
+
+
+
+
